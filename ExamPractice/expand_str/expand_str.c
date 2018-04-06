@@ -1,0 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   expand_str.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/30 11:58:50 by mweir             #+#    #+#             */
+/*   Updated: 2018/03/30 12:03:33 by mweir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void expand_str(char *str)
+{
+	int space;
+	int i;
+
+	i = 0;
+	space = -1;
+	if(str[i] == ' ')
+		i++;
+	while (str[i])
+	{
+		if(str[i] != ' ' && str[i] != '\t')
+		{
+			if (space == 1)
+				write(1, "   ", 3);
+			space = 0;
+			ft_putchar(str[i]);
+		}
+		else if (space == 0)
+			space = 1;
+		i++;
+	}
+}
+
+int main(int argc, char **argv)
+{
+	expand_str("This is a\ttest\n");
+	expand_str(" seulement          la c'est      plus dur ");
+	return (0);
+}

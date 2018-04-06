@@ -1,0 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   btree_apply_by_level.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/03/30 10:30:11 by mweir             #+#    #+#             */
+/*   Updated: 2018/03/30 10:31:53 by mweir            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include "ft_btree.h"
+
+void btree_apply_by_level(t_btree *root, void (*applyf)(void *item, 
+														int current_level, int is_first_elem)
+						  {
+
+						  }

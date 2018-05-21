@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/17 12:43:43 by exam              #+#    #+#             */
-/*   Updated: 2018/04/19 19:31:54 by mweir            ###   ########.fr       */
+/*   Updated: 2018/04/22 17:30:08 by mweir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ char *ft_itoa_base(int nbr, int base)
     return (res);
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
-	printf("%s", ft_itoa_base(0,2));
+	printf("%s", ft_itoa_base(atoi(argv[1]), atoi(argv[2])));
 	return (0);
 }

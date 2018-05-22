@@ -6,26 +6,44 @@
 /*   By: mweir <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 15:13:58 by mweir             #+#    #+#             */
-/*   Updated: 2018/03/30 15:18:18 by mweir            ###   ########.fr       */
+/*   Updated: 2018/05/22 14:07:47 by mweir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 void ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-int main(void)
+void ft_alpha_mirror(char *str)
 {
 	char c;
-
-	c = 'a';
-	while (c <= 'z')
+	int i;
+	
+	i = 0;
+	while (str[i])
 	{
-		ft_putchar('z' - (c - 'a'));
-		c++;
+		c = str[i];
+		if (c >= 'a' && c <= 'z')
+		{
+			ft_putchar('z' - (c - 'a'));
+			printf("%d - (%d - %d)\n", 'z', c , 'a');
+		}
+		else if  (c >= 'A' && c <= 'Z')
+		{
+			ft_putchar('Z' - (c - 'A'));
+			printf("%d - (%d - %d)\n", 'Z', c , 'A');
+		}
+		i++;
 	}
+}
+
+int main(int ac, char **av)
+{
+	if (ac == 2)
+		ft_alpha_mirror(av[1]);
 	return (0);
 }
